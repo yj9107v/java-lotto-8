@@ -8,9 +8,9 @@ public final class CommonValidator {
         throw new AssertionError("Cannot instantiate CommonValidator");
     }
 
-    public static void validateBlank(String input, String message) {
+    public static void validateBlank(String input) {
         if (StringUtils.isBlank(input)) {
-            throw new IllegalArgumentException(message);
+            throw new IllegalArgumentException();
         }
     }
 }
