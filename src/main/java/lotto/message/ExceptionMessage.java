@@ -2,8 +2,8 @@ package lotto.message;
 
 public enum ExceptionMessage {
 
-    RETRY_INPUT_MESSAGE("다시 입력해주세요."),
-    INPUT_EMPTY("[ERROR] 입력값이 비어있습니다." + RETRY_INPUT_MESSAGE);
+    INPUT_EMPTY("[ERROR] 입력값이 비어있습니다."),
+    NOT_NUMERIC("[ERROR] 입력값은 숫자여야 합니다.");
 
     private final String message;
 
