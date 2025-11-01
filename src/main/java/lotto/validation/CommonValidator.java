@@ -4,7 +4,7 @@ import org.junit.platform.commons.util.StringUtils;
 
 public final class CommonValidator {
 
-    private final static String NUMERIC_PATTERN = "\\d+";
+    private final static String NUMERIC_PATTERN = "[1-9]\\d*";
 
     private CommonValidator() {
         throw new AssertionError("Cannot instantiate CommonValidator");
@@ -16,8 +16,8 @@ public final class CommonValidator {
         }
     }
 
-    public static void validateNumeric(String input, String message) {
-        if (!input.equals(NUMERIC_PATTERN)) {
+    public static void validatePositiveNumeric(String input, String message) {
+        if (!input.matches(NUMERIC_PATTERN)) {
             throw new IllegalArgumentException(message);
         }
     }
