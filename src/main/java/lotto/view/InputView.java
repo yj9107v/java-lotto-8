@@ -9,4 +9,9 @@ public class InputView {
         System.out.println(InputMessage.PURCHASE_AMOUNT.getMessage());
         return Console.readLine();
     }
+
+    public String askWinningNumbers() {
+        System.out.println(InputMessage.WINNING_NUMBERS);
+        return Console.readLine();
+    }
 }
