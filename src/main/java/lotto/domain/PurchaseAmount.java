@@ -5,6 +5,7 @@ import lotto.message.ExceptionMessage;
 public class PurchaseAmount {
 
     private final int amount;
+    private static final int REMAINDER_ZERO = 0;
 
     private PurchaseAmount(int amount) {
         validate(amount);
@@ -16,7 +17,7 @@ public class PurchaseAmount {
     }
 
     private void validate(int amount) {
-        if (amount % Policy.LOTTO_PRICE != 0) {
+        if (amount % Policy.LOTTO_PRICE != REMAINDER_ZERO) {
             throw new IllegalArgumentException(ExceptionMessage.PURCHASE_AMOUNT_FORMAT.getMessage());
         }
     }
