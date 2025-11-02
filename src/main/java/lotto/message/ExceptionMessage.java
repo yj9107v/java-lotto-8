@@ -10,7 +10,8 @@ public enum ExceptionMessage {
     INTEGER_OVERFLOW("[ERROR] 입력값이 정수의 최댓값을 초과했습니다."),
     INVALID_LOTTO_NUMBER_COUNT("[ERROR] 로또 번호는 6개여야 합니다."),
     DUPLICATED_LOTTO_NUMBER("[ERROR] 로또 번호는 중복될 수 없습니다."),
-    OUT_OF_RANGE_NUMBER("[ERROR] 로또 번호는 1부터 45 사이여야 합니다.");
+    OUT_OF_RANGE_NUMBER("[ERROR] 로또 번호는 1부터 45 사이여야 합니다."),
+    BONUS_NUMBER_DUPLICATED_WITH_WINNING("[ERROR] 보너스 번호는 당첨 번호와 중복될 수 없습니다.");
 
     private final String message;
 
