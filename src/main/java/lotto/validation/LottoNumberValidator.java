@@ -1,10 +1,15 @@
 package lotto.validation;
 
 import java.util.List;
+import lotto.domain.LottoNumberGenerator;
 import lotto.domain.Policy;
 import lotto.message.ExceptionMessage;
 
-public class LottoNumberValidator {
+public final class LottoNumberValidator {
+
+    private LottoNumberValidator() {
+        throw new AssertionError(ExceptionMessage.CANNOT_INSTANCE_CLASS.format(LottoNumberGenerator.class.getName()));
+    }
 
     public static void validateCount(List<Integer> numbers) {
         if (numbers.size() != Policy.NUMBER_COUNT) {

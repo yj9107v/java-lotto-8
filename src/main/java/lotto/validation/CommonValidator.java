@@ -1,5 +1,6 @@
 package lotto.validation;
 
+import lotto.message.ExceptionMessage;
 import org.junit.platform.commons.util.StringUtils;
 
 public final class CommonValidator {
@@ -7,7 +8,7 @@ public final class CommonValidator {
     private final static String NUMERIC_PATTERN = "[1-9]\\d*";
 
     private CommonValidator() {
-        throw new AssertionError("Cannot instantiate CommonValidator");
+        throw new AssertionError(ExceptionMessage.CANNOT_INSTANCE_CLASS.format(CommonValidator.class.getName()));
     }
 
     public static void validateBlank(String input, String message) {

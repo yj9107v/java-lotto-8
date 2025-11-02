@@ -6,7 +6,7 @@ import lotto.validation.CommonValidator;
 public final class Parsed {
 
     private Parsed() {
-        throw new AssertionError("No instances of Parsed");
+        throw new AssertionError(ExceptionMessage.CANNOT_INSTANCE_CLASS.format(Parsed.class.getName()));
     }
 
     public static int parseIntStrict(String input) {
