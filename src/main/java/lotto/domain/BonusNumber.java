@@ -7,11 +7,11 @@ public class BonusNumber {
     private final int number;
 
     private BonusNumber(int number) {
+        LottoNumberValidator.validateRange(number);
         this.number = number;
     }
 
     public static BonusNumber of(int number) {
-        LottoNumberValidator.validateRange(number);
         return new BonusNumber(number);
     }
 
