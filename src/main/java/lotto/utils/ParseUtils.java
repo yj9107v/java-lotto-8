@@ -15,18 +15,20 @@ public final class ParseUtils {
     }
 
     public static int parsePurchaseAmount(String input) {
-        return parseIntStrict(input);
+        return parseIntStrict(input, ExceptionMessage.PURCHASE_AMOUNT_NOT_NUMERIC.getMessage());
     }
 
     public static List<Integer> parseWinningNumbers(String input) {
         return splitByDelimiterStrict(input).stream()
-                .map(ParseUtils::parseIntStrict)
+                .map(token -> ParseUtils.parseIntStrict(token,
+                        ExceptionMessage.WINNING_NUMBERS_NOT_NUMERIC.getMessage()))
                 .toList();
     }
 
-    public static int parseIntStrict(String input) {
+    public static int parseIntStrict(String input, String message) {
         validateBlank(input);
-        validatePositiveNumeric(input, ExceptionMessage.NOT_NUMERIC.getMessage());
+        validateIntegerRange(input);
+        validatePositiveNumeric(input, message);
         return Integer.parseInt(input);
     }
 
@@ -44,6 +46,14 @@ public final class ParseUtils {
     private static void validatePositiveNumeric(String input, String message) {
         if (!input.matches(NUMERIC_PATTERN)) {
             throw new IllegalArgumentException(message);
+        }
+    }
+
+    private static void validateIntegerRange(String input) {
+        try {
+            Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ExceptionMessage.INTEGER_OVERFLOW.getMessage());
         }
     }
 }
