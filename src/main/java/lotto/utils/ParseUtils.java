@@ -15,7 +15,7 @@ public final class ParseUtils {
     }
 
     public static int parsePurchaseAmount(String input) {
-        return parseIntStrict(input, ExceptionMessage.PURCHASE_AMOUNT_NOT_NUMERIC.getMessage());
+        return parseIntStrict(input, ExceptionMessage.NOT_NUMERIC.getMessage());
     }
 
     public static List<Integer> parseWinningNumbers(String input) {
@@ -25,10 +25,14 @@ public final class ParseUtils {
                 .toList();
     }
 
+    public static int parseBonusNumber(String input) {
+        return parseIntStrict(input, ExceptionMessage.NOT_NUMERIC.getMessage());
+    }
+
     public static int parseIntStrict(String input, String message) {
         validateBlank(input);
-        validateIntegerRange(input);
         validatePositiveNumeric(input, message);
+        validateIntegerRange(input);
         return Integer.parseInt(input);
     }
 
