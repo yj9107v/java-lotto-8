@@ -2,7 +2,7 @@ package lotto.message;
 
 public enum OutputMessage {
 
-    PURCHASE_COUNT_MESSAGE("%n%d개를 구매했습니다.%n");
+    PURCHASE_COUNT_MESSAGE("%n%d개를 구매했습니다.");
 
     private final String message;
 
@@ -12,5 +12,9 @@ public enum OutputMessage {
 
     public String getMessage() {
         return message;
+    }
+
+    public String format(Object... args) {
+        return String.format(message, args);
     }
 }

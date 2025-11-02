@@ -2,6 +2,7 @@ package lotto.message;
 
 public enum ExceptionMessage {
 
+    CANNOT_INSTANCE_CLASS("[ERROR] %s 클래스는 인스턴스화 할 수 없습니다. "),
     INPUT_EMPTY("[ERROR] 입력값이 비어있습니다."),
     NOT_NUMERIC("[ERROR] 입력값은 숫자여야 합니다.(0, 음수, 공백 X)"),
     PURCHASE_AMOUNT_FORMAT("[ERROR] 구입금액은 1,000원 단위로 입력해야 합니다."),
@@ -17,5 +18,9 @@ public enum ExceptionMessage {
 
     public String getMessage() {
         return message;
+    }
+
+    public String format(Object... args) {
+        return String.format(message, args);
     }
 }
