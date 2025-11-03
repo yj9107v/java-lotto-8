@@ -8,6 +8,12 @@ import lotto.message.OutputMessage;
 
 public class OutputView {
 
+    private static final String NEWLINE_BEFORE_AFTER = "%n%s%n";
+    private static final String NEWLINE_WINNING_FORMAT = "%n%s%n%s%n";
+
+    public void printError(String message) {
+        System.out.printf(NEWLINE_BEFORE_AFTER, message);
+    }
 
     public void printPurchaseResult(LottoTickets tickets) {
         printPurchaseHeader(tickets);
@@ -24,7 +30,7 @@ public class OutputView {
     }
 
     private void printPurchaseHeader(LottoTickets tickets) {
-        System.out.printf("%n%s%n", OutputMessage.PURCHASE_COUNT_MESSAGE.format(tickets.size()));
+        System.out.printf(NEWLINE_BEFORE_AFTER, OutputMessage.PURCHASE_COUNT_MESSAGE.format(tickets.size()));
     }
 
     private void printTickets(LottoTickets tickets) {
@@ -32,7 +38,7 @@ public class OutputView {
     }
 
     private void printWinningHeaderWithSeparator() {
-        System.out.printf("%n%s%n%s%n", OutputMessage.WINNING_STATISTICS_MESSAGE.getMessage(),
+        System.out.printf(NEWLINE_WINNING_FORMAT, OutputMessage.WINNING_STATISTICS_MESSAGE.getMessage(),
                 OutputMessage.SEPARATOR.getMessage());
     }
 
