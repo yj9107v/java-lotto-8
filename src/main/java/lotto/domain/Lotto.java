@@ -15,6 +15,10 @@ public class Lotto {
         return new Lotto(numbers);
     }
 
+    public List<Integer> values() {
+        return numbers;
+    }
+
     @Override
     public String toString() {
         return numbers.toString();
