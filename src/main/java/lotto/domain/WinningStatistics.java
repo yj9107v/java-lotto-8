@@ -10,7 +10,7 @@ public class WinningStatistics {
         for (Rank r : Rank.values()) counts.put(r, 0);
     }
 
-    public static WinningStatistics of(Winning winning, LottoTickets tickets) {
+    public static WinningStatistics from(Winning winning, LottoTickets tickets) {
         WinningStatistics winningStatistics = new WinningStatistics();
         tickets.values().forEach(t -> winningStatistics.increment(winning.rankOf(t)));
         return winningStatistics;

@@ -25,12 +25,6 @@ public final class LottoNumberValidator {
         numbers.forEach(LottoNumberValidator::validateNumberInRange);
     }
 
-    private static void validateNumberInRange(Integer number) {
-        if (number == null || number < Policy.MIN_NUMBER || number > Policy.MAX_NUMBER) {
-            throw new IllegalArgumentException(ExceptionMessage.OUT_OF_RANGE_NUMBER.getMessage());
-        }
-    }
-
     private static void validateCount(List<Integer> numbers) {
         if (numbers.size() != Policy.NUMBER_COUNT) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_LOTTO_NUMBER_COUNT.getMessage());
@@ -40,6 +34,12 @@ public final class LottoNumberValidator {
     private static void validateNoDuplicate(List<Integer> numbers) {
         if (numbers.stream().distinct().count() != Policy.NUMBER_COUNT) {
             throw new IllegalArgumentException(ExceptionMessage.DUPLICATED_LOTTO_NUMBER.getMessage());
+        }
+    }
+
+    private static void validateNumberInRange(Integer number) {
+        if (number == null || number < Policy.MIN_NUMBER || number > Policy.MAX_NUMBER) {
+            throw new IllegalArgumentException(ExceptionMessage.OUT_OF_RANGE_NUMBER.getMessage());
         }
     }
 }

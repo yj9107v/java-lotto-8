@@ -4,8 +4,8 @@ import lotto.message.ExceptionMessage;
 
 public class PurchaseAmount {
 
-    private final int amount;
     private static final int REMAINDER_ZERO = 0;
+    private final int amount;
 
     private PurchaseAmount(int amount) {
         validate(amount);

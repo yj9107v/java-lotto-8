@@ -20,7 +20,7 @@ public class Winning {
 
     public void validateNoDuplicate(WinningNumbers winningNumbers, BonusNumber bonusNumber) {
         if (winningNumbers.values().contains(bonusNumber.value())) {
-            throw new IllegalArgumentException(ExceptionMessage.WINNING_NUMBERS_NOT_NUMERIC.getMessage());
+            throw new IllegalArgumentException(ExceptionMessage.BONUS_NUMBER_DUPLICATED_WITH_WINNING.getMessage());
         }
     }
 
