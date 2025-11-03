@@ -32,7 +32,7 @@ public class Winning {
         return bonusNumber;
     }
 
-    public Rank RankOf(Lotto ticket) {
+    public Rank rankOf(Lotto ticket) {
         List<Integer> win = List.copyOf(winningNumbers.values());
         int match = (int) ticket.values().stream().filter(win::contains).count();
         boolean bonusMatch = ticket.values().contains(bonusNumber.value());
