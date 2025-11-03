@@ -19,6 +19,10 @@ public class OutputView {
         printRanks(winningStatistics);
     }
 
+    public void printProfitRate(double profitRate) {
+        System.out.println(OutputMessage.PROFIT_RATE_MESSAGE.format(profitRate));
+    }
+
     private void printPurchaseHeader(LottoTickets tickets) {
         System.out.printf("%n%s%n", OutputMessage.PURCHASE_COUNT_MESSAGE.format(tickets.size()));
     }
