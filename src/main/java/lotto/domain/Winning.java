@@ -24,14 +24,6 @@ public class Winning {
         }
     }
 
-    public WinningNumbers winningNumbers() {
-        return winningNumbers;
-    }
-
-    public BonusNumber bonusNumber() {
-        return bonusNumber;
-    }
-
     public Rank rankOf(Lotto ticket) {
         List<Integer> win = List.copyOf(winningNumbers.values());
         int match = (int) ticket.values().stream().filter(win::contains).count();
