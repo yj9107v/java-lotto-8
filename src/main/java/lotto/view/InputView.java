@@ -11,12 +11,12 @@ public class InputView {
     }
 
     public String askWinningNumbers() {
-        System.out.println(InputMessage.WINNING_NUMBERS.getMessage());
+        System.out.printf("%n%s%n", InputMessage.WINNING_NUMBERS.getMessage());
         return Console.readLine();
     }
 
     public String askBonusNumber() {
-        System.out.println(InputMessage.BONUS_NUMBER.getMessage());
+        System.out.printf("%n%s%n", InputMessage.BONUS_NUMBER.getMessage());
         return Console.readLine();
     }
 }
