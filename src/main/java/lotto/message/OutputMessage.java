@@ -4,7 +4,8 @@ public enum OutputMessage {
 
     PURCHASE_COUNT_MESSAGE("%d개를 구매했습니다."),
     WINNING_STATISTICS_MESSAGE("당첨 통계"),
-    SEPARATOR("---");
+    SEPARATOR("---"),
+    PROFIT_RATE_MESSAGE("총 수익률은 %.1f%%입니다.");
 
     private final String message;
 
