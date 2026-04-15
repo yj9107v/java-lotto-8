@@ -1,4 +1,4 @@
-# java-lotto-precourse
+# java-lotto-precourse 8
 
 ---
 
